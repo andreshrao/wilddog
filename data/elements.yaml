@@ -1,0 +1,89 @@
+# --- EXAMPLES ---
+
+- class: ElementDiscord
+  wid: discord_bot
+  settings:
+    enable: False # True to activate Item 
+    group:
+    - group_all
+    onoff_enable: false
+    battery_enable: false
+    timeout_enable: false
+    detection_enable: false
+    timeout_value: null
+    node: node_discord
+    sid: discord_bot
+
+# - class: DeviceButton_a01
+#   wid: button_lock
+#   settings:
+#     enable: true
+#     group:
+#     - group_all
+#     onoff_enable: false
+#     battery_enable: true
+#     timeout_enable: false
+#     detection_enable: false
+#     timeout_value: null
+#     node: node_mqtt
+#     sid: BT_S01_TT
+# - class: DevicePlug_a01
+#   wid: plug_desk
+#   settings:
+#     enable: true
+#     group:
+#     - group_all
+#     - group_onoff
+#     - group_sleep
+#     - group_light_bedroom
+#     onoff_enable: true
+#     battery_enable: true
+#     timeout_enable: true
+#     detection_enable: false
+#     timeout_value: 7200
+#     node: node_mqtt
+#     sid: PG_B01_01
+# - class: DeviceRelay_a01
+#   wid: light_bedroom
+#   settings:
+#     enable: true
+#     group:
+#     - group_all
+#     - group_onoff
+#     - group_light_bedroom
+#     onoff_enable: true
+#     battery_enable: true
+#     timeout_enable: true
+#     detection_enable: false
+#     timeout_value: 3600
+#     node: node_mqtt
+#     sid: SW_W01_02
+# - class: DeviceMovement_a01
+#   wid: movement_bedroom
+#   settings:
+#     enable: true
+#     group:
+#     - group_all
+#     - group_movement_detection
+#     onoff_enable: false
+#     battery_enable: true
+#     timeout_enable: false
+#     detection_enable: false
+#     timeout_value: null
+#     node: node_mqtt
+#     sid: MV_X00_01
+# - class: DeviceOverture_a01
+#   wid: door_main
+#   settings:
+#     enable: true
+#     group:
+#     - group_all
+#     - group_door
+#     - group_temperature
+#     onoff_enable: false
+#     battery_enable: true
+#     timeout_enable: false
+#     detection_enable: false
+#     timeout_value: null
+#     node: node_mqtt
+#     sid: OC_X01_01

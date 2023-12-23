@@ -1,0 +1,58 @@
+# --- EXAMPLES ---
+
+- class: GroupStandard
+  wid: group_all
+  settings:
+    enable: False # True to activate Item 
+    group: []
+    elements:
+    - plug_desk
+    - plug_livingroom
+    - light_stove
+    - light_bedroom
+    - light_bath_mirror
+
+# - class: GroupStandard
+#   wid: group_onoff
+#   settings:
+#     enable: true
+#     group: []
+#     elements:
+#     - plug_desk
+#     - plug_livingroom
+#     - light_stove
+#     - light_bedroom
+# - class: GroupStandard
+#   wid: group_door
+#   settings:
+#     enable: true
+#     group: []
+#     elements:
+#     - door_main
+# - class: GroupStandard
+#   wid: group_window
+#   settings:
+#     enable: true
+#     group: []
+#     elements:
+#     - window_bedroom_1
+#     - window_bedroom_2
+# - class: GroupStandard
+#   wid: group_light
+#   settings:
+#     enable: true
+#     group: []
+#     elements:
+#     - plug_livingroom
+#     - light_bedroom
+#     - light_bath_mirror
+#     - light_bed
+# - class: GroupStandard
+#   wid: group_movement_detection
+#   settings:
+#     enable: true
+#     group: []
+#     elements:
+#     - movement_bedroom
+#     - movement_livingroom
+#     - movement_kitchen

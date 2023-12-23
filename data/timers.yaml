@@ -1,0 +1,14 @@
+# --- EXAMPLES ---
+
+- class: TimerElement
+  wid: timer_device
+  settings:
+    enable: true
+    group: []
+    period: 2
+- class: TimerSystem
+  wid: timer_system
+  settings:
+    enable: true
+    group: []
+    period: 5

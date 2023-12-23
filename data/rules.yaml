@@ -1,0 +1,197 @@
+# --- EXAMPLES ---
+
+- class: RuleStandard # allow timer_device communicate with wilddog
+  wid: timer_device
+  settings:
+    enable: True
+    group: []
+    sender: timer_device
+    target: null
+    condition: []
+    command: null
+    payload: {}
+
+- class: RuleStandard # allow timer_system communicate with wilddog
+  wid: timer_system
+  settings:
+    enable: True
+    group: []
+    sender: timer_system
+    target: wilddog
+    condition: []
+    command: null
+    payload: {}
+
+# - class: RuleStandard # alert user using discord about a intrusion
+#   wid: alert_discord_detection
+#   settings:
+#     enable: true
+#     group: []
+#     sender: wilddog
+#     target: discord_bot
+#     condition:
+#     - item: this_item
+#       feature: fsm_transition
+#       operator: '='
+#       value: detection
+#     command: send_alert
+#     payload:
+#       fsm_transition: detection
+# - class: RuleStandard # allow discord_bot to communicate with wilddog
+#   wid: discord_bot
+#   settings:
+#     enable: true
+#     group: []
+#     sender: discord_bot
+#     target: null
+#     condition: []
+#     command: null
+#     payload: {}
+# - class: RuleStandard # request transition to Sleep State, only possible if button bed is hold and WD is in state Run and 
+#   wid: update_fsm_sleep_cmd
+#   settings:
+#     enable: true
+#     group: []
+#     sender: button_bed
+#     target: wilddog
+#     condition:
+#     - item: this_item
+#       feature: event
+#       operator: '='
+#       value: hold
+#     - item: wilddog
+#       feature: state
+#       operator: '='
+#       value: run
+#     command: update_fsm
+#     payload:
+#       state: sleep
+# - class: RuleStandard # request transition to prelock if door is open and button door is press and WD is Run
+#   wid: update_fsm_prelock_cmd
+#   settings:
+#     enable: true
+#     group: []
+#     sender: button_door
+#     target: wilddog
+#     condition:
+#     - item: this_item
+#       feature: event
+#       operator: '='
+#       value: single
+#     - item: door_main
+#       feature: contact
+#       operator: '='
+#       value: false
+#     - item: wilddog
+#       feature: state
+#       operator: '='
+#       value: run
+#     command: update_fsm
+#     payload:
+#       state: prelock
+# - class: RuleStandard # declare a detection when WD is Lock
+#   wid: detection_event_movement
+#   settings:
+#     enable: true
+#     group: []
+#     sender: group_movement_detection
+#     target: wilddog
+#     condition:
+#     - item: this_item
+#       feature: detection
+#       operator: '='
+#       value: true
+#     - item: wilddog
+#       feature: state
+#       operator: '='
+#       value: lock
+#     command: detection_event
+#     payload:
+#       value: 1
+# - class: RuleStandard # if a windows is opened when WD goes to Lock state detecion_enable is False to avoid detection from this device
+#   wid: detection_event_update_lock_window
+#   settings:
+#     enable: true
+#     group: []
+#     sender: group_window
+#     target: this_item
+#     condition:
+#     - item: this_item
+#       feature: contact
+#       operator: '='
+#       value: false
+#     - item: wilddog
+#       feature: state
+#       operator: '!='
+#       value: lock
+#     command: set_settings
+#     payload:
+#       detection_enable: false
+# - class: RuleStandard # perform some actions when FSM makes a transition to Run State
+#   wid: update_fsm_run
+#   settings:
+#     enable: true
+#     group: []
+#     sender: wilddog
+#     target: group_run
+#     condition:
+#     - item: this_item
+#       feature: fsm_transition
+#       operator: '='
+#       value: run
+#     command: set_status
+#     payload:
+#       onoff: 'ON'
+# - class: RuleStandard # perform some actions when FSM makes a transition to Sleep State
+#   wid: update_fsm_sleep
+#   settings:
+#     enable: true
+#     group: []
+#     sender: wilddog
+#     target: group_sleep
+#     condition:
+#     - item: this_item
+#       feature: fsm_transition
+#       operator: '='
+#       value: sleep
+#     command: set_status
+#     payload:
+#       onoff: 'OFF'
+# - class: RuleStandard # turn bed light just when a movement is detecte, it is night and WD is not Sleep 
+#   wid: light_bed_on
+#   settings:
+#     enable: true
+#     group: []
+#     sender: movement_bedroom
+#     target: light_bed
+#     condition:
+#     - item: this_item
+#       feature: detection
+#       operator: '='
+#       value: true
+#     - item: wilddog
+#       feature: state
+#       operator: '!='
+#       value: sleep
+#     - item: wilddog
+#       feature: timelight
+#       operator: '='
+#       value: night
+#     command: set_status
+#     payload:
+#       onoff: 'ON'
+# - class: RuleStandard # Command test
+#   wid: reponse_wilddog_test
+#   settings:
+#     enable: true
+#     group: []
+#     sender: keypad_livingroom
+#     target: wilddog
+#     condition:
+#     - item: this_item
+#       feature: event
+#       operator: '='
+#       value: single
+#     command: command_test
+#     payload:
+#       value: 1

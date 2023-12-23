@@ -1,0 +1,28 @@
+# --- EXAMPLES ---
+
+- class: SystemWilddog
+  wid: wilddog
+  settings:
+    enable: true
+    group: []
+    group_onoff: group_onoff
+    group_door: group_door
+    group_window: group_window
+    group_temperature: group_temperature
+    feature_group_onoff: onoff
+    feature_group_door: contact
+    feature_group_window: contact
+    feature_group_temperature: temperature
+    detection_threshold: 2
+    timeout_detection: 120
+    timeout_state:
+      start: null
+      check: 20
+      run: null
+      sleep: null
+      prelock: 20
+      lock: null
+      warning: 20
+      detection: 300
+      idle: 10
+      stop: null

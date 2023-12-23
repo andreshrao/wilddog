@@ -1,0 +1,34 @@
+# --- EXAMPLES ---
+
+- class: NodeDiscord
+  wid: node_discord
+  settings:
+    enable: False # True to activate Item
+    group: []
+    elements:
+    - wid: discord_bot
+      sid: discord_bot
+    token: your_bot_token
+    guild: your_server_guild
+
+- class: NodeMQTT
+  wid: node_mqtt
+  settings:
+    enable: False # True to activate Item 
+    group: []
+    elements:
+    - wid: plug_desk
+      sid: PG_B01_01
+    - wid: light_door_lamp
+      sid: SW_E01_03
+    - wid: relay_test
+      sid: SW_E01_04
+    - wid: light_bed
+      sid: SW_E01_05
+    - wid: relay_oven
+      sid: SW_P01_02
+    - wid: movement_bedroom
+      sid: MV_X00_01
+    adress: 192.168.1.10
+    port: 1880
+
